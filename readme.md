@@ -31,3 +31,29 @@ Criar arquivo **templates/galeria/nova_imagem.html**
 
 Criar arquivo **apps/galeria/forms.py**
 
+## 3 - Deleção, edição e filtro
+
+Alterar arquivo **templates/galeria/imagem.html**
+
+```
+<div>
+    <a href="{% url 'editar_imagem' fotografia.id %}"><button class="btn btn-success col-12" style="padding: top 5px;">Editar</button></a>
+    <a href="{% url 'deletar_imagem' fotografia.id %}"><button class="btn btn-danger col-12" style="padding: top 5px;">Excluir</button></a>
+</div>
+```
+
+Alterar arquivo **templates/galeria/index.html**
+
+```
+<ul class="tags__lista">
+    <li class="tags__tag"><a href="{% url 'filtro' 'NEBULOSA' %}" class="btn" style="color: #C9C9C9;">Nebulosa</a></li>
+    <li class="tags__tag"><a href="{% url 'filtro' 'ESTRELA' %}" class="btn" style="color: #C9C9C9;">Estrela</a></li>
+    <li class="tags__tag"><a href="{% url 'filtro' 'GALÁXIA' %}" class="btn" style="color: #C9C9C9;">Galáxia</a></li>
+    <li class="tags__tag"><a href="{% url 'filtro' 'PLANETA' %}" class="btn" style="color: #C9C9C9;">Planeta</a></li>
+</ul>
+```
+
+Alterar arquivo **apps/galeria/urls.py**  
+Alterar arquivo **apps/galeria/views.py**  
+Criar arquivo **templates/galeria/edditar_imagem.html**
+
